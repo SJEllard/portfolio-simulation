@@ -1,2 +1,2 @@
-# portfolio-simulation
-Markowitz portfolio simulation
+# Portfolio Simulation
+Markowitz financial portfolio simulation
