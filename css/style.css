@@ -1,0 +1,17 @@
+.bottom-btn {
+    display: block;
+    margin: auto;
+}
+.bottom a:hover { 
+    text-decoration: none;
+}
+
+a:hover { 
+    color: #B54213;
+    text-decoration: none;
+}
+
+a { 
+    color: #E47041;
+    text-decoration: none;
+}

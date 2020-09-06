@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://sjellard.github.io/portfolio-simulation/portfolio-simulation/css/style.css">
+
+    <title>Markowitz Portfolio Simulation</title>
+</head>
+<header>
+    <div class="d-flex font-weight-bold justify-content-center mt-5 mb-5" >
+        <h1 class="header" style="margin-top:20px; margin-bottom:20px">
+            Markowitz Portfolio Simulation
+        </h1>
+    </div>
+</header>
+<body>
+<div class='container'>
+    <hr>
+    <div class="card-deck" style="margin-top:50px">
+        <div class='col-md-10 mx-auto mb-5'>
+            <div class='card-body'>
+                <p>
+                    First description
+                    <br><br>
+                    Second Description
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='card-deck'>
+        <div class='col-md-10 mx-auto mb-5'>
+
+            <div class='card-body'>
+                <h2>First Body</h2>     
+                <p></p>
+                <figure class="figure">
+                        <img src="https://raw.githubusercontent.com/SJEllard/portfolio-simulation/master/Figure_1.png" 
+                        class="figure-img img-fluid rounded" 
+                        alt="alt">
+                        <figcaption class="figure-caption"><small>caption</small></figcaption>
+                </figure>
+                <br><br>
+                <p> 
+                        After the full season the Toronto Raptors 
+                        were rated as having the best performance. They did win the 2019 NBA Championship, 
+                        so this makes sense. 
+                        <br><br>
+                        An interesting aspect of this result is how large the Raptors' rating difference 
+                        is from the regular season to the playoffs (1627 to 1743, a <b>116  point increase</b>). 
+                        The Golden State Warriors and Philadephia 76ers also had significant performance rating jumps,
+                        69 and 44 points respectively. 
+                </p>
+                <br>
+
+
+            <div class="mx-auto" style="width: 75%;">
+            <figure class="figure">
+                <img class="figure-img img-fluid rounded" 
+                src="https://sjellard.github.io/ELO-NBA/data_folder/elo_ratings/elo_ratings.PNG"
+                alt="2018-19 Full Season Elo Table">
+                <figcaption class="figure-caption"><small>2018-19 Full Season Elo Table</small></figcaption>
+        </figure>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='card-deck'>
+        <div class='col-md-10 mx-auto mb-5'>
+
+            <div class='card-body'>
+                <h2>Second Body</h2>     
+                <br>   
+                <p> The first component of the algorithm is the comparison between two teams in a single game.
+                    The expected win probability is calculated based on the team's ratings. 
+                </p>
+                <p>
+                    In a match between two evenly rated teams, each will have a win probability of 0.5 (they are expected to win half of the time). 
+                    The expected win probabilities are then compared to the real outcome of the game and both teams ratings are then updated accordingly.
+                </p>
+                <br>
+                <figure class="figure">
+                    <img src="https://sjellard.github.io/ELO-NBA/images/one_game.PNG" class="figure-img img-fluid rounded" alt="...">
+                    <figcaption class="figure-caption"><small></small></figcaption>
+                </figure>
+                <br><br>
+                <p>
+                    The winning team wins points from the losing team and the amount won is deduced from the difference 
+                    in performance ratings. 
+                </p>
+                <br><br>
+
+                <table class="table">
+                    <thead class='thead-light'>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Team A Rating (Winner)</th>
+                        <th scope="col">Team B Rating (Loser)</th>
+                        <th scope="col">Points won/lost</th>
+                        <th scope="col">Updated Ratings</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"></th>
+                        <td>1500</td>
+                        <td>1500</td>
+                        <td>+16</td>
+                        <td>A: 1516 and B: 1484</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td>1590</td>
+                        <td>1500</td>
+                        <td>+12</td>
+                        <td>A: 1602 and B: 1488</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"></th>
+                        <td>1690</td>
+                        <td>1500</td>
+                        <td>+8</td>
+                        <td>A: 1698 and B: 1492</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                <br>
+                <p> Next, we iterate this function over an entire season of games. To do this we 
+                    lookup the information from each game and pass the information 
+                    to the first function, call the function, and then increase the count by one. Our count moves us to the next game, 
+                    finishing when we have counted through the entire season.
+                </p>
+                <br>
+                <figure class="figure">
+                        <img src="https://sjellard.github.io/ELO-NBA/images/loop_games.PNG" class="figure-img img-fluid rounded" alt="...">
+                        <figcaption class="figure-caption"><small></small></figcaption>
+                </figure>
+                <br><br>
+                <p> Running these functions will give us the Elo performance rating of all 30 teams after the entire season. 
+                    Each team starts at 1500 which should represent an average team relative to the pool. 
+                    Upper echelon teams end up being rated 1600 and above whereas mediocre teams generally 
+                    have performance ratings 1400 and below.
+                </p>
+                <br>
+                <h5>Technologies used:</h5>
+                <ul>
+                    <li>Python, Pandas, Matplotlib</li>
+                    <li>Jupyter Notebook</li>
+                </ul>
+                <h5>Data:</h5>
+                <ul>
+                    <li> Securities and market index data sourced from Yahoo finance
+                    </li>
+                </ul>
+                <br>
+                <div class = "bottom">
+                    <a href="https://github.com/SJEllard/ELO-NBA/blob/master/ELO-NBA-jupyter.ipynb" target="_blank">
+                        <button type="button" class="btn btn-dark bottom-btn">
+                            View Code!
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
