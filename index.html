@@ -12,123 +12,129 @@
     <title>Markowitz Portfolio Simulation</title>
 </head>
 <header>
-    <div class="d-flex font-weight-bold justify-content-center mt-5 mb-5" >
-        <h1 class="header" style="margin-top:10px; margin-bottom:10px">
+    <div class="d-flex font-weight-bold justify-content-center mt-5" >
+        <h1 class="header" >
             Markowitz Portfolio Simulation
         </h1>
     </div>
 </header>
 <body>
-<div class='container'>
+<div class='container mb-5 mt-4'>
     <hr>
-    <div class="card-deck">
-        <div class='col-md-10 mx-auto mb-5'>
-            <div class='card-body'>
-                <p>
-                    In the 1950s economist Harry Markowitz developed Markowitz Portfolio Theory (or simply Modern Portfolio Theory)
-                    which is a framework for selecting optimal portfolios. 
+                <p class='mt-4'>
+                    In the 1950s economist Harry Markowitz developed Markowitz Portfolio Theory, 
+                    or simply Modern Portfolio Theory. Modern Portfolio Theory is a framework for selecting optimized financial portfolios.  
                     <br><br>
-                    The key idea is that financial assets (portfolios) have various levels of risk and return.
+                    Financial assets have various levels of risk and return. 
+                    Investors obviously prefer higher returns, but they also prefer to have lower risk. 
+                    In this sense there is a trade-off between risk and reward and financial portfolios 
+                    need to be considered on a risk-adjusted basis. Markowitz Portfolios are the set 
+                    of portfolios that maximize returns for a given level of volatility. This set of 
+                    optimal portfolios is also called the efficient frontier. 
                     <br><br>
-                    The main assumptions made by Markowitz are that investors prefer more returns to less,
-                    and they prefer low risk to high. Given two assets with the same return, an investor will prefer the less-risky asset, 
-                    and given two assets with the same risk, an investor prefers the one with greater returns.
-
-                    <br><br>
-                    Overview description of the project 
+                    Using this framework, we build our own efficient portfolios below.
                 </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class='container'>
-    <div class='card-deck'>
-        <div class='col-md-10 mx-auto mb-5'>
-            <div class='card-body'>
-                <h2>First Body</h2>     
+                <h4 class='mt-3'>Building Portfolios</h4>     
                 <p>
-                First paragraph describing the first part of the project. Describe theory more
+                    First, we randomly selected 25 securities that are included in the S&P 500 and 
+                    pulled their daily adjusted closes for the calendar year of 2019. 
+                    The closing prices are then used to calculate daily returns for each ticker 
+                    which are then converted into annualized returns. 
+                    <br><br>
+                    Next, we randomly generate a set of 25,000 portfolios with random weights assigned
+                     to each security. Then we calculate each portfolio’s annualized return and its 
+                     volatility using the covariance of the securities.
+                     These are the two core factors we need for selecting efficient Markowitz Portfolios.
                 </p>
                 <p>
-                
+                    One common Markowitz portfolio is the Max Sharpe Ratio portfolio (MSR). 
+                    The Sharpe ratio is essentially the ratio found by dividing a portfolio’s return 
+                    by its volatility. The portfolio with the greatest Sharpe ratio is called the MSR. 
+                    And, the MSR is always Markowitz portfolio.  
+                    <br><br>
+                    Another common Markowitz portfolio is the Global Minimum Volatility portfolio (GMV). 
+                    It is simply the portfolio with the lowest volatility. 
+                    The GMV is also always a Markowitz portfolio. 
+                    
+                    Below we find these two Markowitz Portfolios and compare them with
+                     a uniformly distributed portfolio and the
+                    S&P 500. Let’s take a look at the results.
                 </p>
+                <h4 class='mt-3'> Simulation Results </h4>
+                <p>Graphing the simulation results can be quite informative. Here we have a scatterplot of the 25,000 portfolios, with volatility on the x-axis and returns on the y-axis. The color is mapped according to the portfolios Sharpe ratio.
+                     Since investors prefer low risk and high returns, the direction of increasing preference points 
+                     towards the top left corner. 
+                     </p>
                 <figure class="figure">
                         <img src="https://raw.githubusercontent.com/SJEllard/portfolio-simulation/master/Figure_1.png" 
                         class="figure-img img-fluid rounded" 
                         alt="alt">
-                        <figcaption class="figure-caption"><small>caption</small></figcaption>
+                        <figcaption class="figure-caption"><small>25,000 randomly generated portfolios</small></figcaption>
                 </figure>
-                <br><br>
+                <br>
                 <p> 
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, recusandae reiciendis nobis qui voluptatibus aliquam.
-                        <br><br>
-                        Lorem ipsum dolor sit amet.
+                        We can see the MSR and GMV are both towards the upper left corner as expected.
+                         Both of these portfolios are Markowitz Portfolios – they have the maximum 
+                         return for a given level of volatility. Notice that for both of these portfolios
+                          there exists no portfolio which gives the same return with lower risk,
+                         nor any portfolio which has greater return with equal risk.
+                <br><br>
+                The equally weighted portfolio and the S&P 500 both lie near the middle of the group.
+                 We can see that these are in fact inefficient portfolios. 
+                 There are other portfolios availiable with lower risk and equal return (to the left) 
+                 and portfolios with higher return and equal risk (above).
+                 All of those portfolios are preferable. 
                 </p>
                 <br>
-        </div>
-    </div>
-</div>
-
-<div class='container'>
-    <div class='card-deck'>
-        <div class='col-md-10 mx-auto mb-5'>
-
-            <div class='card-body'>
-                <h2>Second Body</h2>     
-                <br>   
-                <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, facere.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit. Esse modi nisi iste obcaecati?
-                </p>
-                <p>
-                    Eaque magnam quaerat repudiandae commodi!
-                </p>
-                <br><br>
-
                 <table class="table">
                     <thead class='thead-light'>
                       <tr>
                         <th scope="col"></th>
-                        <th scope="col">Team A Rating (Winner)</th>
-                        <th scope="col">Team B Rating (Loser)</th>
-                        <th scope="col">Points won/lost</th>
-                        <th scope="col">Updated Ratings</th>
+                        <th scope="col">Portfolio</th>
+                        <th scope="col">Annualized Return</th>
+                        <th scope="col">Volatility</th>
+                        <th scope="col">Sharpe Ratio</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row"></th>
-                        <td>1500</td>
-                        <td>1500</td>
-                        <td>+16</td>
-                        <td>A: 1516 and B: 1484</td>
+                        <td>Max Sharpe Ratio (MSR)</td>
+                        <td>30.91</td>
+                        <td>10.69</td>
+                        <td>2.89</td>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <td>1590</td>
-                        <td>1500</td>
-                        <td>+12</td>
-                        <td>A: 1602 and B: 1488</td>
+                        <td>Global Min Volatility (GMV)</td>
+                        <td>25.04</td>
+                        <td>10.34</td>
+                        <td>2.42</td>
                       </tr>
                       <tr>
                         <th scope="row"></th>
-                        <td>1690</td>
-                        <td>1500</td>
-                        <td>+8</td>
-                        <td>A: 1698 and B: 1492</td>
+                        <td>Equally weighted</td>
+                        <td>26.28</td>
+                        <td>12.24</td>
+                        <td>2.15</td>
                       </tr>
+                      <th scope="row"></th>
+                      <td>S&P 500</td>
+                      <td>26.16</td>
+                      <td>12.45</td>
+                      <td>2.1</td>
+                    </tr>
                     </tbody>
-                  </table>
-                <br>
-                <br>
-                <h5>Technologies used:</h5>
+                </table>
+                <p>
+                    Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur.
+                </p>
+                <h4>Technologies used:</h4>
                 <ul>
                     <li>Python, Pandas, Matplotlib</li>
                     <li>Jupyter Notebook</li>
                 </ul>
-                <h5>Data:</h5>
+                <h4>Data:</h4>
                 <ul>
                     <li> Individual stock and S&P 500 data sourced from Yahoo finance
                     </li>
@@ -143,9 +149,8 @@
                 </div>
             </div>
 
-        </div>
-    </div>
-</div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
