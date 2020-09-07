@@ -41,7 +41,7 @@
                     The closing prices are then used to calculate daily returns for each ticker 
                     which are then converted into annualized returns. 
                     <br><br>
-                    Next, we randomly generate a set of 25,000 portfolios with random weights assigned
+                    Next, we randomly generate a set of 100,000 portfolios with random weights assigned
                      to each security. Then we calculate each portfolio’s annualized return and its 
                      volatility using the covariance of the securities.
                      These are the two core factors we need for selecting efficient Markowitz Portfolios.
@@ -61,15 +61,15 @@
                     S&P 500. Let’s take a look at the results.
                 </p>
                 <h4 class='mt-3'> Simulation Results </h4>
-                <p>Graphing the simulation results can be quite informative. Here we have a scatterplot of the 25,000 portfolios, with volatility on the x-axis and returns on the y-axis. The color is mapped according to the portfolios Sharpe ratio.
+                <p>Graphing the simulation results can be quite informative. Here we have a scatterplot of the 100,000 portfolios, with volatility on the x-axis and returns on the y-axis. The color is mapped according to the portfolios Sharpe ratio.
                      Since investors prefer low risk and high returns, the direction of increasing preference points 
                      towards the top left corner. 
                      </p>
                 <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/SJEllard/portfolio-simulation/master/Figure_1.png" 
+                        <img src="https://raw.githubusercontent.com/SJEllard/portfolio-simulation/master/Figure_3.png" 
                         class="figure-img img-fluid rounded" 
                         alt="alt">
-                        <figcaption class="figure-caption"><small>25,000 randomly generated portfolios</small></figcaption>
+                        <figcaption class="figure-caption"><small>100,000 randomly generated portfolios</small></figcaption>
                 </figure>
                 <br>
                 <p> 
@@ -100,16 +100,16 @@
                       <tr>
                         <th scope="row"></th>
                         <td>Max Sharpe Ratio (MSR)</td>
-                        <td>30.91</td>
-                        <td>10.69</td>
-                        <td>2.89</td>
+                        <td>33.81</td>
+                        <td>11.63</td>
+                        <td>2.91</td>
                       </tr>
                       <tr>
                         <th scope="row"></th>
                         <td>Global Min Volatility (GMV)</td>
-                        <td>25.04</td>
-                        <td>10.34</td>
-                        <td>2.42</td>
+                        <td>26.1</td>
+                        <td>10.26</td>
+                        <td>2.54</td>
                       </tr>
                       <tr>
                         <th scope="row"></th>
