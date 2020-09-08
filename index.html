@@ -27,16 +27,19 @@
                     <br><br>
                     Financial assets have various levels of risk and return. 
                     Investors obviously prefer higher returns, but they also prefer to have lower risk. 
-                    In this sense there is a trade-off between risk and reward and financial portfolios 
-                    need to be considered on a risk-adjusted basis. Markowitz Portfolios are the set 
-                    of portfolios that maximize returns for a given level of volatility. This set of 
-                    optimal portfolios is also called the efficient frontier. 
-                    <br><br>
-                    Using this framework, we build our own efficient portfolios below.
+                    Since there is a trade-off between risk and reward financial portfolios 
+                    need to be considered on a risk-adjusted basis. Markowitz Portfolios are 
+                    there portfolios that maximize returns for a given level of volatility.
+
+                    Together this group of optimal portfolios which have the maximum returns for 
+                    different levels of risk is called the efficient frontier. All of these portfolios
+                    are efficient and investors may choose between them based on there risk tolerance. 
+                    Implementing this framework we build our own efficient portfolios and select two
+                    famous Markowitz Portfolios
                 </p>
-                <h4 class='mt-3'>Building Portfolios</h4>     
+                <h4 class='mt-4'>Building Portfolios</h4>     
                 <p>
-                    First, we randomly selected 25 securities that are included in the S&P 500 and 
+                    First, we randomly selected 25 components of the S&P 500 then 
                     pulled their daily adjusted closes for the calendar year of 2019. 
                     The closing prices are then used to calculate daily returns for each ticker 
                     which are then converted into annualized returns. 
@@ -47,12 +50,11 @@
                      These are the two core factors we need for selecting efficient Markowitz Portfolios.
                 </p>
                 <p>
-                    One common Markowitz portfolio is the Max Sharpe Ratio portfolio (MSR). 
+                    One common Markowitz portfolio is the <b>Max Sharpe Ratio</b> portfolio (MSR). 
                     The Sharpe ratio is essentially the ratio found by dividing a portfolio’s return 
                     by its volatility. The portfolio with the greatest Sharpe ratio is called the MSR. 
                     And, the MSR is always Markowitz portfolio.  
-                    <br><br>
-                    Another common Markowitz portfolio is the Global Minimum Volatility portfolio (GMV). 
+                    Another common Markowitz portfolio is the <b>Global Minimum Volatility</b> portfolio (GMV). 
                     It is simply the portfolio with the lowest volatility. 
                     The GMV is also always a Markowitz portfolio. 
                     
@@ -60,7 +62,7 @@
                      a uniformly distributed portfolio and the
                     S&P 500. Let’s take a look at the results.
                 </p>
-                <h4 class='mt-3'> Simulation Results </h4>
+                <h4 class='mt-4'> Simulation Results </h4>
                 <p>Graphing the simulation results can be quite informative. Here we have a scatterplot of the 100,000 portfolios, with volatility on the x-axis and returns on the y-axis. The color is mapped according to the portfolios Sharpe ratio.
                      Since investors prefer low risk and high returns, the direction of increasing preference points 
                      towards the top left corner. 
@@ -73,16 +75,17 @@
                 </figure>
                 <br>
                 <p> 
-                        We can see the MSR and GMV are both towards the upper left corner as expected.
-                         Both of these portfolios are Markowitz Portfolios – they have the maximum 
-                         return for a given level of volatility. Notice that for both of these portfolios
-                          there exists no portfolio which gives the same return with lower risk,
-                         nor any portfolio which has greater return with equal risk.
+                We can see the MSR and GMV are both towards the upper left corner as expected. This upper left
+                edge is the efficient frontier where all the Markowitz Portfolios lie.
+                Since the MSR and GMV are optimal portfolios we know they have the maximum 
+                return for a given level of volatility. In other words, for both the MSR and GMV
+                there exists no portfolio which gives the same return with lower risk,
+                nor any portfolio which has greater return with equal risk.
                 <br><br>
-                The equally weighted portfolio and the S&P 500 both lie near the middle of the group.
-                 We can see that these are in fact inefficient portfolios. 
-                 There are other portfolios availiable with lower risk and equal return (to the left) 
-                 and portfolios with higher return and equal risk (above).
+                The equally weighted portfolio and the S&P 500 benchmarks both lie near the middle of the group.
+                 We can easily see that these are in fact inefficient portfolios. 
+                 There are many other portfolios availiable with lower risk and equal return (directly to the left) 
+                 and portfolios with higher return and equal risk (directly above).
                  All of those portfolios are preferable. 
                 </p>
                 <br>
@@ -127,9 +130,24 @@
                     </tbody>
                 </table>
                 <p>
-                    Lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur.
+                    Notice that the MSR portfolio had greater returns and <i>lower</i> variance compared 
+                    to the benchmarks. Also, the GMV garned approximately the same returns as the benchmarks 
+                    but also had significantly lower volatility. Clearly, both the MSR and GMV are
+                    superior to the benchmarks at least in terms of historical performance.
+                    <br><br>
+                    Using the Markowitz framework we have selected two portoflios that are optimized to maximize
+                    returns for a given level of volatility. One with the minimum level of volatility (GMV) and the other 
+                    with moderate volatility but high returns (MSR). Choosing between these and other efficient portfolios is a matter of 
+                    investor preference. A risk-averse investor may feel comfortable with the GMV portfolio while 
+                    another may accept higher risk for the chance of higher returns. In any case, all of the 
+                    Markowitz Portfolios are efficient.
+                    <!-- Since different investors have different risk tolerences one may choose to invest in the riskier
+                    MSR portfolio where another may choose to invest in the safer GMV portfolio. In either case,
+                    both portfolios are optimized to maximize returns for the given level of volatility.  -->
+                    
+                    
                 </p>
-                <h4>Technologies used:</h4>
+                <h4 class='mt-4'>Technologies used:</h4>
                 <ul>
                     <li>Python, Pandas, Matplotlib</li>
                     <li>Jupyter Notebook</li>
