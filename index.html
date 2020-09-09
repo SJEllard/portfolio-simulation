@@ -27,7 +27,7 @@
                     <br><br>
                     Financial assets have various levels of risk and return. 
                     Investors obviously prefer higher returns, but they also prefer to have lower risk. 
-                    Since there is a trade-off between risk and reward financial portfolios 
+                    Since there is a trade-off between risk and reward, financial portfolios 
                     need to be considered on a risk-adjusted basis. Markowitz Portfolios are 
                     the portfolios that maximize returns for a given level of volatility.
 
@@ -39,17 +39,18 @@
                 </p>
                 <h4 class='mt-4'>Building Portfolios</h4>     
                 <p>
-                    First, we randomly selected 25 components of the S&P 500 then 
-                    pulled their daily adjusted closes for the calendar year of 2019. 
-                    The closing prices are then used to calculate daily returns for each ticker 
-                    which are then converted into annualized returns. 
+                    First, we randomly selected 25 components of the S&P 500 and 
+                    pulled their adjusted daily closes for the calendar year of 2019. 
+                    The closing prices were then used to calculate daily returns which
+                    are then converted to annualized returns. These are the stocks we will
+                    use to build our portfolios.
                     <br><br>
-                    Next, we randomly generate a set of 100,000 portfolios with random weights assigned
-                     to each security. Then we calculate each portfolio’s annualized return and its 
-                     volatility using the covariance of the securities.
-                     These are the two core factors we need for selecting efficient Markowitz Portfolios.
-                </p>
-                <p>
+                    Next we randomly generate a set of 100,000 portfolios with random weights assigned
+                    to each stock. For each portfolio we calculate the annualized return and the 
+                     volatility using the covariance of the component stocks.
+                     The annualized return and volatility are the two core factors we need for selecting 
+                     efficient Markowitz Portfolios.
+                    <br><br>
                     One common Markowitz portfolio is the <b>Max Sharpe Ratio</b> portfolio (MSR). 
                     The Sharpe ratio is essentially the ratio found by dividing a portfolio’s return 
                     by its volatility. The portfolio with the greatest Sharpe ratio is called the MSR. 
@@ -60,10 +61,12 @@
                     
                     Below we find these two Markowitz Portfolios and compare them with
                      a uniformly distributed portfolio and the
-                    S&P 500. Let’s take a look at the results.
+                    S&P 500 as benchmarks. Let’s take a look at the results.
                 </p>
                 <h4 class='mt-4'> Simulation Results </h4>
-                <p>Graphing the simulation results can be quite informative. Here we have a scatterplot of the 100,000 portfolios, with volatility on the x-axis and returns on the y-axis. The color is mapped according to the portfolios Sharpe ratio.
+                <p>Graphing the simulation results can be quite informative. Here we have a scatterplot of the 100,000 portfolios, 
+                    with volatility on the x-axis and returns on the y-axis. The colour is mapped according 
+                    to the portfolios Sharpe ratio.
                      Since investors prefer low risk and high returns, the direction of increasing preference points 
                      towards the top left corner. 
                      </p>
