@@ -135,33 +135,49 @@
                 <p>
                     Notice that the MSR portfolio had greater returns and <i>lower</i> variance compared 
                     to the benchmarks. The GMV also garnered approximately the same returns as the benchmarks 
-                    but also had <i>significantly</i> lower volatility. Using the Markowitz framework we were able
-                    to create two portfolios that are superior to the benchmarks. Choosing between these and other efficient
-                    portfolios is then a matter of investor preference. 
+                    but also had <i>significantly</i> lower volatility. Last, lets chart the time-series of our optimal portfolios against the benchmarks.
+                </p>
+                    
+                     
+                    <figure class="figure">
+                            <img src="https://raw.githubusercontent.com/SJEllard/portfolio-simulation/master/Timeseries_1.png" 
+                            class="figure-img img-fluid rounded" 
+                            alt="alt">
+                            <figcaption class="figure-caption"><small>Portfolio time-series linegraph</small></figcaption>
+                    </figure>
+                    <p>
+                        With further visual inspection we can verify some of the intuition we built above. We can easily see
+                        the excess returns earned by the MSR portfolio compared to the GMV and benchmarks. Using the time-series graph to 
+                        compare volatility is more difficult, be we can to an extent notice the lower volatility of the GMV. We can also
+                        easily see the similarity in the shapes of the graphs, sharing peaks and troughs. This makes sense since
+                        the portfolios are after all S&P 500 components so the performance should be similar. 
+                    </p>
+                    <!-- <p>
+                    We have finished building our optimal portfolios, measuring their performance and visualizing the results.
+                    To view the code 
+                    Choosing between the MSR, GMV and other efficient portfolios is a matter of investor preference. 
                     A risk-averse investor may feel comfortable with the GMV portfolio while 
-                    another may tolerate risk for the chance of greater returns. In any case, all of the 
+                    another may tolerate risk for the chance of greater returns. 
+                    
+                    In any case, all of the 
                     Markowitz Portfolios are efficient.
                     <br>
-                    <!-- Using the Markowitz framework we have selected two optimal portoflios which outperformed the 
-                    common benchmarks. One portfolio with the minimum level of volatility (GMV) and the other 
-                    with moderate volatility but high returns (MSR). Choosing between these and other efficient portfolios is a matter of 
-                    investor preference. A risk-averse investor may feel comfortable with the GMV portfolio while 
-                    another may accept higher risk for the chance of higher returns. In any case, all of the 
-                    Markowitz Portfolios are efficient. -->
-                    <!-- Since different investors have different risk tolerences one may choose to invest in the riskier
-                    MSR portfolio where another may choose to invest in the safer GMV portfolio. In either case,
-                    both portfolios are optimized to maximize returns for the given level of volatility.  -->
                     
                     
-                </p>
+                </p> -->
                 <h4 class='mt-4'>Technologies used:</h4>
                 <ul>
-                    <li>Python, NumPy, Matplotlib</li>
+                    <li>Python, NumPy, Pandas, Matplotlib</li>
                     <li>Jupyter Notebook</li>
                 </ul>
                 <h4>Data:</h4>
                 <ul>
-                    <li> S&P 500 component data sourced from Yahoo finance
+                    <li> S&P 500 component data sourced from Yahoo finance.
+                    </li>
+                </ul>
+                <h4>Updates:</h4>
+                <ul>
+                    <li> Sept 26th, 2020: Added time-series charts and description.
                     </li>
                 </ul>
                 <br>
